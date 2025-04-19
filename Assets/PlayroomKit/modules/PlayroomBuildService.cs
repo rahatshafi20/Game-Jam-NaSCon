@@ -378,19 +378,11 @@ namespace Playroom
 
                 string jsonData;
 
-                if (data is int || data is float)
-                {
+                if (data is int || data is string || data is float)
                     jsonData = JSONNode.Parse(data.ToString()).ToString();
-                }
-                else if (data is string)
-                {
-                    jsonData = data.ToString();
-                }
                 else
-                {
                     jsonData = JsonUtility.ToJson(data);
-                }
-                
+
                 _interop.SaveMyTurnDataWrapper(jsonData);
             }
 

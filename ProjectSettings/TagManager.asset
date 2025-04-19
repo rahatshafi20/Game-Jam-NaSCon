@@ -2,13 +2,14 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
-  tags: []
+  serializedVersion: 3
+  tags:
+  - Slot
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - bg
   - Water
   - UI
   - 
@@ -16,8 +17,8 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - BackGround
+  - PlayingArea
   - 
   - 
   - 
@@ -41,3 +42,11 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Game_Layer
+    uniqueID: 1126835933
+    locked: 0
+  - name: Playing_Area
+    uniqueID: 4043014043
+    locked: 0
+  m_RenderingLayers:
+  - Default
