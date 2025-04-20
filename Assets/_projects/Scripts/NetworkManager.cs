@@ -58,7 +58,7 @@ public class NetworkManager : MonoBehaviour
         InitOptions options = new InitOptions
         {
             skipLobby = false,
-            maxPlayersPerRoom = 6,
+            maxPlayersPerRoom = 3,
             turnBased = true,
         };
 
@@ -83,6 +83,13 @@ public class NetworkManager : MonoBehaviour
     // It updates the player list and initializes the game state.
     private void AddPlayer(PlayroomKit.Player player)
     {
+        if (prk.IsHost() && players.Count >= 3)
+        {
+            Debug.LogWarning("Player rejected: max player limit reached.");
+            // Optionally kick the player out or show a message
+            //prk.KickPlayer(player.id);  // Only if supported
+            return;
+        }
         Debug.LogWarning(player.GetProfile().name + " joined the room");
         InfoText.text = prk.MyPlayer().GetProfile().name;
 
@@ -99,6 +106,7 @@ public class NetworkManager : MonoBehaviour
             UpdatePlayerOrder();
         }
     }
+
 
     // This method id called by the host whenever a new player joins the game room.
     private void UpdatePlayerOrder()

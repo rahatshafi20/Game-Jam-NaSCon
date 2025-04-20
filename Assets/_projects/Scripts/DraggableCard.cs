@@ -11,7 +11,7 @@ public class DraggableCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     private Vector3 ogPosition;
     public float hoverHeight = 30f;
 
-    void Start()
+    public void Start()
     {
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();

@@ -6,7 +6,7 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 {
     public void OnBeginDrag(PointerEventData eventdata)
     {
-
+        Debug.LogWarning("DRAG STARTED");
     }
     public void OnDrag(PointerEventData eventdata)
     {
@@ -15,7 +15,7 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     }
     public void OnEndDrag(PointerEventData eventdata)
     {
-
+        Debug.LogWarning("DRAG ENDED");
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
